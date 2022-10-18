@@ -6,8 +6,9 @@
 //
 
 import UIKit
-import AgoraUIKit_iOS
-
+import AgoraRtcKit
+import AgoraUIKit
+import Foundation
 
 class ViewController: UIViewController {
 

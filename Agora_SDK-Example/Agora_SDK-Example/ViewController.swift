@@ -57,15 +57,16 @@ class ViewController: UIViewController {
         videoCanvas.view = localView
         // Sets the local video view
         agoraKit?.setupLocalVideo(videoCanvas)
+        agoraKit?.startPreview()
     }
 
     func joinChannel(){
         // The uid of each user in the channel must be unique.
-        agoraKit?.joinChannel(byToken: <#Agora Token#>, channelId: <#Channel Name#>, info: nil, uid: 0, joinSuccess: { (channel, uid, elapsed) in
-        })
+        agoraKit?.joinChannel(byToken: <#Agora Token#>, channelId: <#Channel Name#>, info: nil, uid: 0)
     }
 
     func leaveChannel() {
+        agoraKit?.stopPreview()
         agoraKit?.leaveChannel(nil)
         AgoraRtcEngineKit.destroy()
     }
@@ -73,6 +74,14 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: AgoraRtcEngineDelegate {
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int) {
+        print("joined channel, \(channel)!")
+    }
+    func rtcEngine(
+        _ engine: AgoraRtcEngineKit, didClientRoleChanged oldRole: AgoraClientRole, newRole: AgoraClientRole
+    ) {
+        print(newRole)
+    }
     // Monitors the didJoinedOfUid callback
     // The SDK triggers the callback when a remote user joins the channel
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
@@ -80,7 +89,9 @@ extension ViewController: AgoraRtcEngineDelegate {
         videoCanvas.uid = uid
         videoCanvas.renderMode = .hidden
         videoCanvas.view = remoteView
-        // Sets the remote video view
         agoraKit?.setupRemoteVideo(videoCanvas)
+    }
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
+        print("user: \(uid) left with reason: \(reason.rawValue)")
     }
 }

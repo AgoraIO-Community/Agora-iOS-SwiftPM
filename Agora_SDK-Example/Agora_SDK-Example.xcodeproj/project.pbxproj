@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F3AF692C26848EBA00BA2466 /* AgoraRtcKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3AF692B26848EBA00BA2466 /* AgoraRtcKit */; };
+		F3BFB86A282C0FD9006F1D52 /* RtcBasic in Frameworks */ = {isa = PBXBuildFile; productRef = F3BFB869282C0FD9006F1D52 /* RtcBasic */; };
 		F3C9DBA12683989100114DF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C9DBA02683989100114DF2 /* AppDelegate.swift */; };
 		F3C9DBA32683989100114DF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C9DBA22683989100114DF2 /* SceneDelegate.swift */; };
 		F3C9DBA52683989100114DF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C9DBA42683989100114DF2 /* ViewController.swift */; };
 		F3C9DBA82683989100114DF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C9DBA62683989100114DF2 /* Main.storyboard */; };
 		F3C9DBAA2683989200114DF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C9DBA92683989200114DF2 /* Assets.xcassets */; };
 		F3C9DBAD2683989200114DF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C9DBAB2683989200114DF2 /* LaunchScreen.storyboard */; };
+		F3EA928828FA0A3B00AD749C /* SpatialAudio in Frameworks */ = {isa = PBXBuildFile; productRef = F3EA928728FA0A3B00AD749C /* SpatialAudio */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F336534F2768BE45000022AC /* SDK-Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SDK-Example.entitlements"; sourceTree = "<group>"; };
 		F3C9DB9D2683989100114DF2 /* Agora_SDK-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agora_SDK-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C9DBA02683989100114DF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3C9DBA22683989100114DF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3AF692C26848EBA00BA2466 /* AgoraRtcKit in Frameworks */,
+				F3EA928828FA0A3B00AD749C /* SpatialAudio in Frameworks */,
+				F3BFB86A282C0FD9006F1D52 /* RtcBasic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				F3C9DB9F2683989100114DF2 /* Agora_SDK-Example */,
 				F3C9DB9E2683989100114DF2 /* Products */,
+				F3EA928428FA0A2900AD749C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,8 +69,16 @@
 				F3C9DBA92683989200114DF2 /* Assets.xcassets */,
 				F3C9DBAB2683989200114DF2 /* LaunchScreen.storyboard */,
 				F3C9DBAE2683989200114DF2 /* Info.plist */,
+				F336534F2768BE45000022AC /* SDK-Example.entitlements */,
 			);
 			path = "Agora_SDK-Example";
+			sourceTree = "<group>";
+		};
+		F3EA928428FA0A2900AD749C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,7 +98,8 @@
 			);
 			name = "Agora_SDK-Example";
 			packageProductDependencies = (
-				F3AF692B26848EBA00BA2466 /* AgoraRtcKit */,
+				F3BFB869282C0FD9006F1D52 /* RtcBasic */,
+				F3EA928728FA0A3B00AD749C /* SpatialAudio */,
 			);
 			productName = "Agora_SDK-Example";
 			productReference = F3C9DB9D2683989100114DF2 /* Agora_SDK-Example.app */;
@@ -116,7 +129,7 @@
 			);
 			mainGroup = F3C9DB942683989100114DF2;
 			packageReferences = (
-				F3AF692A26848EBA00BA2466 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
+				F3BFB868282C0FD9006F1D52 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
 			);
 			productRefGroup = F3C9DB9E2683989100114DF2 /* Products */;
 			projectDirPath = "";
@@ -297,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 278494H572;
 				INFOPLIST_FILE = "Agora_SDK-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 278494H572;
 				INFOPLIST_FILE = "Agora_SDK-Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,21 +366,26 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F3AF692A26848EBA00BA2466 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
+		F3BFB868282C0FD9006F1D52 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:AgoraIO/AgoraRtcEngine_iOS.git";
+			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.4.5;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F3AF692B26848EBA00BA2466 /* AgoraRtcKit */ = {
+		F3BFB869282C0FD9006F1D52 /* RtcBasic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3AF692A26848EBA00BA2466 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
-			productName = AgoraRtcKit;
+			package = F3BFB868282C0FD9006F1D52 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = RtcBasic;
+		};
+		F3EA928728FA0A3B00AD749C /* SpatialAudio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3BFB868282C0FD9006F1D52 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = SpatialAudio;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
